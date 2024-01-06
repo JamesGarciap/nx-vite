@@ -1,3 +1,16 @@
+import * as stylex from '@stylexjs/stylex';
+
+const styles = stylex.create({
+  base: {
+    fontSize: 16,
+    lineHeight: 1.5,
+    color: 'grey',
+  },
+  highlighted: {
+    color: 'rebeccapurple',
+  },
+});
+
 /*
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  This is a starter component and can be deleted.
@@ -425,7 +438,7 @@ export function NxWelcome({ title }: { title: string }) {
       />
       <div className="wrapper">
         <div className="container">
-          <div id="welcome">
+          <div id="welcome" {...stylex.props(styles.base, styles.highlighted)}>
             <h1>
               <span> Hello there, </span>
               Welcome {title} 👋
